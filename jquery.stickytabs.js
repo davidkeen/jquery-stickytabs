@@ -24,8 +24,8 @@
             var selector = hash ? 'a[' + settings.selectorAttribute + '="' + hash + '"]' : settings.initialTab;
             $(selector, context).tab('show');
 
-            // Only scroll if we have a hash
-            if (hash) {
+            // Only scroll if we have a hash in the URL and that hash is a tab
+            if (hash && $(selector, context).length > 0) {
                 setTimeout(scrollTo, 1);
             }
         };
